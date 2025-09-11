@@ -35,6 +35,7 @@
             text-align: center;
             transition: transform 0.8s;
             transform-style: preserve-3d;
+            cursor: pointer;
         }
         .flip-card:hover .flip-card-inner {
             transform: rotateY(180deg);
@@ -194,89 +195,101 @@
                 <p class="max-w-2xl mx-auto text-gray-600 mb-12">Pasa el ratón sobre cada servicio para descubrir más. Ofrecemos un enfoque 360° para cuidar de ti.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Tarjeta Fisioterapia -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757605716/Generated_Image_September_11_2025_-_5_48PM_epvvyu.png'); background-size: cover; background-position: center;">
-                                <div class="card-bg-overlay"></div>
-                                <h3 class="relative z-10 text-2xl font-bold">Fisioterapia</h3>
-                            </div>
-                            <div class="flip-card-back">
-                                <h3 class="text-xl font-bold text-cyan-800 mb-3">Fisioterapia</h3>
-                                <p class="text-gray-600">Recuperación de lesiones, tratamiento del dolor y mejora de la movilidad con técnicas manuales y aparatología avanzada.</p>
-                                <a href="fisioterapia.html" class="relative z-20 block mt-4 font-semibold text-cyan-600 italic hover:underline">Haz clic para saber más</a>
+                    <a href="fisioterapia.html" class="block">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757605716/Generated_Image_September_11_2025_-_5_48PM_epvvyu.png'); background-size: cover; background-position: center;">
+                                    <div class="card-bg-overlay"></div>
+                                    <h3 class="relative z-10 text-2xl font-bold">Fisioterapia</h3>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3 class="text-xl font-bold text-cyan-800 mb-3">Fisioterapia</h3>
+                                    <p class="text-gray-600">Recuperación de lesiones, tratamiento del dolor y mejora de la movilidad con técnicas manuales y aparatología avanzada.</p>
+                                    <p class="mt-4 font-semibold text-cyan-600 italic">Haz clic para saber más</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- Tarjeta Fisioterapia Deportiva -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757606662/Generated_Image_September_11_2025_-_5_53PM_1_tyodfn.png'); background-size: cover; background-position: center;">
-                                <div class="card-bg-overlay"></div>
-                                <h3 class="relative z-10 text-2xl font-bold">Fisioterapia Deportiva</h3>
-                            </div>
-                            <div class="flip-card-back">
-                                <h3 class="text-xl font-bold text-cyan-800 mb-3">Fisioterapia Deportiva</h3>
-                                <p class="text-gray-600">Prevención, tratamiento y readaptación de lesiones en deportistas para optimizar el rendimiento y acelerar la vuelta al juego.</p>
-                                <a href="fisioterapia-deportiva.html" class="relative z-20 block mt-4 font-semibold text-cyan-600 italic hover:underline">Haz clic para saber más</a>
+                    <a href="fisioterapia-deportiva.html" class="block">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757606662/Generated_Image_September_11_2025_-_5_53PM_1_tyodfn.png'); background-size: cover; background-position: center;">
+                                    <div class="card-bg-overlay"></div>
+                                    <h3 class="relative z-10 text-2xl font-bold">Fisioterapia Deportiva</h3>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3 class="text-xl font-bold text-cyan-800 mb-3">Fisioterapia Deportiva</h3>
+                                    <p class="text-gray-600">Prevención, tratamiento y readaptación de lesiones en deportistas para optimizar el rendimiento y acelerar la vuelta al juego.</p>
+                                    <p class="mt-4 font-semibold text-cyan-600 italic">Haz clic para saber más</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- Tarjeta Osteopatía -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                             <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757607031/Generated_Image_September_11_2025_-_5_56PM_rvdmam.png'); background-size: cover; background-position: center;">
-                                <div class="card-bg-overlay"></div>
-                                <h3 class="relative z-10 text-2xl font-bold">Osteopatía</h3>
-                            </div>
-                            <div class="flip-card-back">
-                                <h3 class="text-xl font-bold text-cyan-800 mb-3">Osteopatía</h3>
-                                <p class="text-gray-600">Terapia holística que busca el origen del problema para reequilibrar el cuerpo, tratando el sistema músculo-esquelético, visceral y craneal.</p>
-                                <a href="osteopatia.html" class="relative z-20 block mt-4 font-semibold text-cyan-600 italic hover:underline">Haz clic para saber más</a>
+                    <a href="osteopatia.html" class="block">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                 <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757607031/Generated_Image_September_11_2025_-_5_56PM_rvdmam.png'); background-size: cover; background-position: center;">
+                                    <div class="card-bg-overlay"></div>
+                                    <h3 class="relative z-10 text-2xl font-bold">Osteopatía</h3>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3 class="text-xl font-bold text-cyan-800 mb-3">Osteopatía</h3>
+                                    <p class="text-gray-600">Terapia holística que busca el origen del problema para reequilibrar el cuerpo, tratando el sistema músculo-esquelético, visceral y craneal.</p>
+                                    <p class="mt-4 font-semibold text-cyan-600 italic">Haz clic para saber más</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- Tarjeta Nutrición -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757607145/Generated_Image_September_11_2025_-_6_11PM_dmpnuo.png'); background-size: cover; background-position: center;">
-                                <div class="card-bg-overlay"></div>
-                                <h3 class="relative z-10 text-2xl font-bold">Nutrición</h3>
-                            </div>
-                            <div class="flip-card-back">
-                                <h3 class="text-xl font-bold text-cyan-800 mb-3">Nutrición</h3>
-                                <p class="text-gray-600">Planes de alimentación personalizados para mejorar tu salud, alcanzar tus objetivos de peso y potenciar los resultados de tu tratamiento.</p>
-                                <a href="nutricion.html" class="relative z-20 block mt-4 font-semibold text-cyan-600 italic hover:underline">Haz clic para saber más</a>
+                    <a href="nutricion.html" class="block">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757607145/Generated_Image_September_11_2025_-_6_11PM_dmpnuo.png'); background-size: cover; background-position: center;">
+                                    <div class="card-bg-overlay"></div>
+                                    <h3 class="relative z-10 text-2xl font-bold">Nutrición</h3>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3 class="text-xl font-bold text-cyan-800 mb-3">Nutrición</h3>
+                                    <p class="text-gray-600">Planes de alimentación personalizados para mejorar tu salud, alcanzar tus objetivos de peso y potenciar los resultados de tu tratamiento.</p>
+                                    <p class="mt-4 font-semibold text-cyan-600 italic">Haz clic para saber más</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                     <!-- Tarjeta Entrenador Personal -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757607295/Generated_Image_September_11_2025_-_6_14PM_iharib.png'); background-size: cover; background-position: center;">
-                                <div class="card-bg-overlay"></div>
-                                <h3 class="relative z-10 text-2xl font-bold">Entrenador Personal</h3>
-                            </div>
-                            <div class="flip-card-back">
-                                <h3 class="text-xl font-bold text-cyan-800 mb-3">Entrenador Personal</h3>
-                                <p class="text-gray-600">Programas de ejercicio individualizados para la readaptación de lesiones, mejora de la condición física y consecución de metas deportivas.</p>
-                                <a href="entrenador-personal.html" class="relative z-20 block mt-4 font-semibold text-cyan-600 italic hover:underline">Haz clic para saber más</a>
+                    <a href="entrenador-personal.html" class="block">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757607295/Generated_Image_September_11_2025_-_6_14PM_iharib.png'); background-size: cover; background-position: center;">
+                                    <div class="card-bg-overlay"></div>
+                                    <h3 class="relative z-10 text-2xl font-bold">Entrenador Personal</h3>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3 class="text-xl font-bold text-cyan-800 mb-3">Entrenador Personal</h3>
+                                    <p class="text-gray-600">Programas de ejercicio individualizados para la readaptación de lesiones, mejora de la condición física y consecución de metas deportivas.</p>
+                                    <p class="mt-4 font-semibold text-cyan-600 italic">Haz clic para saber más</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                      <!-- Tarjeta Fisiourense Estética -->
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757606337/Generated_Image_September_11_2025_-_5_58PM_lyiikh.png'); background-size: cover; background-position: center;">
-                                <div class="card-bg-overlay"></div>
-                                <h3 class="relative z-10 text-2xl font-bold">Fisiourense Estética</h3>
-                            </div>
-                            <div class="flip-card-back">
-                                <h3 class="text-xl font-bold text-cyan-800 mb-3">Fisiourense Estética</h3>
-                                <p class="text-gray-600">Tratamientos de estética avanzada que combinan salud y belleza, utilizando la última tecnología para el cuidado facial y corporal.</p>
-                                <a href="estetica.html" class="relative z-20 block mt-4 font-semibold text-cyan-600 italic hover:underline">Haz clic para saber más</a>
+                    <a href="estetica.html" class="block">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757627719/pau-0235_loemf2.jpg'); background-size: cover; background-position: center;">
+                                    <div class="card-bg-overlay"></div>
+                                    <h3 class="relative z-10 text-2xl font-bold">Fisiourense Estética</h3>
+                                </div>
+                                <div class="flip-card-back">
+                                    <h3 class="text-xl font-bold text-cyan-800 mb-3">Fisiourense Estética</h3>
+                                    <p class="text-gray-600">Tratamientos de estética avanzada que combinan salud y belleza, utilizando la última tecnología para el cuidado facial y corporal.</p>
+                                    <p class="mt-4 font-semibold text-cyan-600 italic">Haz clic para saber más</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
