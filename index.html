@@ -695,25 +695,7 @@
             });
         }
         
-        // --- Lógica para el Analizador de Síntomas con Gemini API ---
-        
-        async function fetchWithBackoff(url, options, retries = 3, delay = 1000) {
-            for (let i = 0; i < retries; i++) {
-                try {
-                    const response = await fetch(url, options);
-                    if (response.ok) return response;
-                    if (response.status >= 400 && response.status < 500) {
-                       throw new Error(`Error del cliente: ${response.statusText}`);
-                    }
-                    await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, i)));
-                } catch (error) {
-                    if (i === retries - 1) throw error;
-                    await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, i)));
-                }
-            }
-            throw new Error("No se pudo completar la solicitud después de varios intentos.");
-        }
-
+        // --- Lógica para el Analizador de Síntomas con Gemini API (Seguro) ---
         const analyzeBtn = document.getElementById('analyze-btn');
         const symptomInput = document.getElementById('symptom-input');
         const geminiResultDiv = document.getElementById('gemini-result');
@@ -735,40 +717,27 @@
                 loadingSpinner.style.display = 'flex';
                 resultText.style.display = 'none';
                 resultText.innerHTML = '';
-
-                const apiKey = ""; 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-                const systemPrompt = "Actúas como un asistente virtual para Fisiourense, una clínica de fisioterapia en Ourense, España. Eres amable, profesional y tu objetivo es orientar al usuario, nunca diagnosticar. Tu conocimiento se basa en los servicios que ofrece la clínica: Fisioterapia, Fisioterapia Deportiva, Osteopatía, Nutrición, Entrenador Personal y Fisiourense Estética.";
                 
-                const userQuery = `Un paciente describe su problema de la siguiente manera: '${userInput}'. Basándote en esta descripción, sugiere 1 o 2 servicios de Fisiourense que podrían ser más relevantes para él. Explica brevemente y en un lenguaje sencillo por qué cada servicio podría ayudar. Después de las sugerencias, añade un consejo general muy breve (ej. evitar movimientos bruscos, aplicar frío/calor si corresponde, etc.). Finalmente, y de forma obligatoria, añade el siguiente descargo de responsabilidad en negrita: '**Importante: Esta es una orientación y no sustituye un diagnóstico profesional. Te recomendamos que pidas una cita para que uno de nuestros especialistas pueda evaluar tu caso de forma personalizada.**'`;
-
-                const payload = {
-                    contents: [{ parts: [{ text: userQuery }] }],
-                    systemInstruction: { parts: [{ text: systemPrompt }] },
-                };
-
                 try {
-                    const response = await fetchWithBackoff(apiUrl, {
+                    const response = await fetch('/api/analyze', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
+                        body: JSON.stringify({ userInput: userInput }),
                     });
 
-                    const result = await response.json();
-                    const candidate = result.candidates?.[0];
-
-                    if (candidate && candidate.content?.parts?.[0]?.text) {
-                        let generatedText = candidate.content.parts[0].text;
-                        generatedText = generatedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                        generatedText = generatedText.replace(/\n/g, '<br>');
-                        resultText.innerHTML = generatedText;
-                    } else {
-                        throw new Error("No se pudo obtener una respuesta válida del asistente.");
+                    if (!response.ok) {
+                        throw new Error(`El servidor respondió con un error: ${response.statusText}`);
                     }
+                    
+                    const result = await response.json();
+                    
+                    let generatedText = result.text;
+                    generatedText = generatedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    generatedText = generatedText.replace(/\n/g, '<br>');
+                    resultText.innerHTML = generatedText;
 
                 } catch (error) {
-                    console.error("Error al llamar a la API de Gemini:", error);
+                    console.error("Error al llamar a la función de API:", error);
                     resultText.innerHTML = "Lo sentimos, ha ocurrido un error al procesar tu solicitud. Por favor, intenta de nuevo más tarde o llámanos directamente.";
                 } finally {
                     loadingSpinner.style.display = 'none';
