@@ -91,8 +91,8 @@
         /* Estilos para animación de scroll */
         .scroll-animate {
             opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transform: translateY(100px); /* Aumentado de 50px a 100px */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Aumentado de 0.7s a 0.8s */
         }
         .scroll-animate-in {
             opacity: 1;
@@ -576,7 +576,19 @@
             </div>
         </div>
     </footer>
-
+    
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 bg-opacity-90 text-white p-4 text-sm z-[150] translate-y-full transition-transform duration-500 ease-in-out" style="display: none;">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-center md:text-left">
+                Utilizamos cookies propias y de terceros para mejorar tu experiencia en nuestra web. Al continuar navegando, aceptas su uso. Puedes obtener más información en nuestra 
+                <a href="#" id="privacy-link-cookie" class="underline hover:text-cyan-300">Política de Privacidad</a>.
+            </p>
+            <button id="accept-cookies-btn" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 flex-shrink-0">
+                Aceptar
+            </button>
+        </div>
+    </div>
 </div>
 
     <script>
@@ -712,26 +724,64 @@
         const privacyModal = document.getElementById('privacy-modal');
         const privacyLink = document.getElementById('privacy-link');
         const closeModalBtn = document.getElementById('close-modal-btn');
+        const privacyLinkCookie = document.getElementById('privacy-link-cookie');
 
-        if (privacyLink && privacyModal && closeModalBtn) {
-            privacyLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                privacyModal.style.display = 'flex';
-                lucide.createIcons();
-            });
+        const openModal = (e) => {
+            e.preventDefault();
+            privacyModal.style.display = 'flex';
+            lucide.createIcons();
+        };
 
-            const closeModal = () => {
-                privacyModal.style.display = 'none';
-            };
+        const closeModal = () => {
+            privacyModal.style.display = 'none';
+        };
 
-            closeModalBtn.addEventListener('click', closeModal);
+        if (privacyLink) privacyLink.addEventListener('click', openModal);
+        if (privacyLinkCookie) privacyLinkCookie.addEventListener('click', openModal);
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+        if (privacyModal) privacyModal.addEventListener('click', (e) => {
+            if (e.target === privacyModal) closeModal();
+        });
+        
+        // --- Lógica para el Banner de Cookies ---
+        const cookieBanner = document.getElementById('cookie-banner');
+        const acceptCookiesBtn = document.getElementById('accept-cookies-btn');
 
-            privacyModal.addEventListener('click', (e) => {
-                if (e.target === privacyModal) {
-                    closeModal();
-                }
-            });
+        const setCookie = (name, value, days) => {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        };
+
+        const getCookie = (name) => {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for(let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        };
+        
+        if (!getCookie('cookies_accepted')) {
+            cookieBanner.style.display = 'block';
+            setTimeout(() => {
+                cookieBanner.classList.remove('translate-y-full');
+            }, 100);
         }
+
+        acceptCookiesBtn.addEventListener('click', () => {
+            setCookie('cookies_accepted', 'true', 365);
+            cookieBanner.classList.add('translate-y-full');
+            setTimeout(() => {
+                cookieBanner.style.display = 'none';
+            }, 500);
+        });
         
         // --- Lógica para el Analizador de Síntomas con Gemini API (Seguro) ---
         const analyzeBtn = document.getElementById('analyze-btn');
