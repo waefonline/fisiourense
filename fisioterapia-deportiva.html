@@ -25,8 +25,8 @@
         /* Estilos para animación de scroll */
         .scroll-animate {
             opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+            transform: translateY(100px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
         .scroll-animate-in {
@@ -65,6 +65,7 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateZ(0); /* Fix for Firefox rendering bug */
         }
         .flip-card-front {
             color: white;
@@ -174,12 +175,12 @@
                                     </div>
                                     <div class="flip-card-back">
                                         <h3 class="text-xl font-bold text-cyan-800 mb-3">Lesiones de Ligamentos</h3>
-                                        <p class="text-gray-600 text-sm">Tratamiento de esguinces (tobillo, rodilla) y rehabilitación post-quirúrgica de ligamentos cruzados. Nuestro objetivo es restaurar la estabilidad y la confianza en la articulación.</p>
+                                        <p class="text-gray-600 text-sm">Desde esguinces de tobillo hasta lesiones más complejas como las del ligamento cruzado anterior. Nuestro objetivo es restaurar la estabilidad articular y asegurar una recuperación completa.</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Pubalgia -->
-                             <div class="flip-card">
+                             <!-- Pubalgia -->
+                            <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757677072/Generated_Image_September_12_2025_-_1_37PM_fjwsdt.png'); background-size: cover; background-position: center;">
                                         <div class="card-bg-overlay"></div>
@@ -187,12 +188,12 @@
                                     </div>
                                     <div class="flip-card-back">
                                         <h3 class="text-xl font-bold text-cyan-800 mb-3">Pubalgia</h3>
-                                        <p class="text-gray-600 text-sm">Conocida como la hernia del deportista, tratamos el dolor en la ingle y el pubis mediante un programa de fortalecimiento específico y terapia manual para corregir desequilibrios musculares.</p>
+                                        <p class="text-gray-600 text-sm">Conocida como la hernia del deportista, tratamos el dolor en la zona del pubis mediante la corrección de desequilibrios musculares y la aplicación de terapia manual específica.</p>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Fascitis Plantar -->
-                             <div class="flip-card">
+                             <!-- Fascitis Plantar -->
+                            <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757677513/Generated_Image_September_12_2025_-_1_44PM_yeyys1.png'); background-size: cover; background-position: center;">
                                         <div class="card-bg-overlay"></div>
@@ -200,12 +201,12 @@
                                     </div>
                                     <div class="flip-card-back">
                                         <h3 class="text-xl font-bold text-cyan-800 mb-3">Fascitis Plantar</h3>
-                                        <p class="text-gray-600 text-sm">Aliviamos el dolor en la planta del pie típico de corredores y deportistas de impacto, combinando terapia manual, estiramientos y el uso de tecnologías como las ondas de choque.</p>
+                                        <p class="text-gray-600 text-sm">Tratamos el dolor agudo en el talón, muy común en corredores, mediante técnicas de descarga, estiramientos y el estudio de la pisada para corregir su causa.</p>
                                     </div>
                                 </div>
                             </div>
                              <!-- Readaptación Deportiva -->
-                             <div class="flip-card">
+                            <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757677719/Generated_Image_September_12_2025_-_1_47PM_noyxc1.png'); background-size: cover; background-position: center;">
                                         <div class="card-bg-overlay"></div>
@@ -213,31 +214,31 @@
                                     </div>
                                     <div class="flip-card-back">
                                         <h3 class="text-xl font-bold text-cyan-800 mb-3">Readaptación Deportiva</h3>
-                                        <p class="text-gray-600 text-sm">La fase final y crucial de la recuperación. Diseñamos un plan progresivo de ejercicios que simulan el gesto deportivo para asegurar una vuelta a la actividad sin riesgo de recaídas.</p>
+                                        <p class="text-gray-600 text-sm">No basta con curar la lesión, hay que preparar al cuerpo para volver a competir. Creamos un plan de vuelta progresiva al deporte, simulando gestos deportivos y asegurando una reincorporación segura.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
                     
-                    <!-- Nuestras Técnicas -->
+                    <!-- Beneficios -->
                     <section class="mt-20 scroll-animate">
-                         <h2 class="text-3xl font-bold text-cyan-800 text-center mb-12">Enfoque Terapéutico para Atletas</h2>
+                         <h2 class="text-3xl font-bold text-cyan-800 text-center mb-12">Nuestro enfoque terapéutico</h2>
                          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto text-center">
                             <div>
                                 <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757677889/Generated_Image_September_12_2025_-_1_50PM_h1ntqs.png" class="rounded-lg shadow-lg mb-4 h-56 w-full object-cover">
                                 <h3 class="font-bold text-xl text-cyan-900 mb-2">Prevención de Lesiones</h3>
-                                <p class="text-gray-600">Evaluamos tus puntos débiles y desequilibrios para crear un plan preventivo que te mantenga alejado de las lesiones.</p>
+                                <p class="text-gray-600">Analizamos tus puntos débiles y te enseñamos a fortalecerlos para reducir drásticamente el riesgo de futuras lesiones.</p>
                             </div>
                             <div>
                                 <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757678526/ChatGPT_Image_12_sept_2025_14_02_01_xm0uz8.png" class="rounded-lg shadow-lg mb-4 h-56 w-full object-cover">
                                 <h3 class="font-bold text-xl text-cyan-900 mb-2">Recuperación Acelerada</h3>
-                                <p class="text-gray-600">Aplicamos las técnicas más innovadoras para reducir los tiempos de recuperación y que vuelvas a tu deporte cuanto antes.</p>
+                                <p class="text-gray-600">Combinamos terapia manual con la tecnología más avanzada para acortar los plazos de recuperación de forma segura.</p>
                             </div>
                             <div>
                                 <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757678816/Generated_Image_September_12_2025_-_2_06PM_c3bg2m.png" class="rounded-lg shadow-lg mb-4 h-56 w-full object-cover">
                                 <h3 class="font-bold text-xl text-cyan-900 mb-2">Optimización del Rendimiento</h3>
-                                <p class="text-gray-600">No solo tratamos lesiones, te ayudamos a mejorar tu fuerza, flexibilidad y control motor para que rindas al máximo.</p>
+                                <p class="text-gray-600">No solo tratamos lesiones, te ayudamos a ser un mejor atleta, mejorando tu técnica, fuerza y resistencia.</p>
                             </div>
                          </div>
                     </section>
@@ -247,9 +248,9 @@
             <!-- CTA Section -->
             <section class="bg-cyan-700 py-20 text-white text-center scroll-animate">
                 <div class="container mx-auto px-4">
-                    <h2 class="text-3xl font-bold mb-4">¿Compites este fin de semana?</h2>
-                    <p class="max-w-xl mx-auto mb-8">No dejes que una molestia se convierta en una lesión. Contacta con nosotros y asegura tu mejor rendimiento.</p>
-                    <a href="index.html#contacto" class="bg-white text-cyan-700 font-bold px-8 py-4 rounded-full hover:bg-cyan-100 transition-all duration-300 transform hover:scale-105 text-lg">Pide tu cita ahora</a>
+                    <h2 class="text-3xl font-bold mb-4">Vuelve al juego más fuerte que nunca</h2>
+                    <p class="max-w-xl mx-auto mb-8">No dejes que una lesión te frene. Pide tu cita y deja que nuestro equipo de especialistas en deporte te ayude a alcanzar tus metas.</p>
+                    <a href="index.html#contacto" class="bg-white text-cyan-700 font-bold px-8 py-4 rounded-full hover:bg-cyan-100 transition-all duration-300 transform hover:scale-105 text-lg">Contacta con nosotros</a>
                 </div>
             </section>
         </main>
