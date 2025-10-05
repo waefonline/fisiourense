@@ -4,10 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fisiourense - Clínica de fisioterapia en Ourense con más de 25 años de experiencia. Fisioterapia, osteopatía, nutrición y tratamientos especializados. Primera consulta gratuita.">
+    <meta name="keywords" content="fisioterapia Ourense, osteopatía, fisioterapia deportiva, nutrición, rehabilitación">
+    <meta property="og:title" content="Fisiourense - Fisioterapia Avanzada en Ourense">
+    <meta property="og:description" content="Más de 25 años cuidando tu salud. Fisioterapia, osteopatía y tratamientos integrales en Ourense.">
+    <meta property="og:image" content="https://res.cloudinary.com/djyfupa7x/image/upload/v1757592863/Generated_Image_September_11__2025_-_2_11PM-removebg-preview_tkqvyp.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <title>Fisiourense - Fisioterapia Avanzada y Bienestar en Ourense</title>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/djyfupa7x/image/upload/v1757592863/Generated_Image_September_11__2025_-_2_11PM-removebg-preview_tkqvyp.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
@@ -44,7 +53,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            -webkit-backface-visibility: hidden; /* Safari */
+            -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             border-radius: 1rem;
             overflow: hidden;
@@ -52,7 +61,7 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transform: translateZ(0); /* Fix for Firefox rendering bug */
+            transform: translateZ(0);
         }
         .flip-card-front {
             color: white;
@@ -99,6 +108,30 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* WhatsApp button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 
@@ -106,21 +139,24 @@
 
 <div class="max-w-screen-xl mx-auto bg-gray-50 shadow-2xl">
 
+    <!-- Skip to content -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-cyan-600 text-white px-4 py-2 rounded-lg z-50">Saltar al contenido principal</a>
+
     <!-- Encabezado y Navegación -->
     <header id="header" class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-screen-xl z-50 transition-all duration-300">
         <div class="container mx-auto px-4">
-            <nav class="flex justify-between items-center py-4">
-                <a href="#" id="logo">
-                    <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757592863/Generated_Image_September_11__2025_-_2_11PM-removebg-preview_tkqvyp.png" alt="Logotipo de Fisiourense" class="h-14 w-auto transition-all duration-300">
+            <nav class="flex justify-between items-center py-4" role="navigation" aria-label="Navegación principal">
+                <a href="#" id="logo" aria-label="Fisiourense - Ir a inicio">
+                    <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757592863/Generated_Image_September_11__2025_-_2_11PM-removebg-preview_tkqvyp.png" alt="Logotipo de Fisiourense" class="h-14 w-auto transition-all duration-300" loading="eager">
                 </a>
                 <div class="hidden md:flex items-center space-x-4 font-medium">
-                    <a href="#inicio" class="font-medium rounded-lg px-5 py-2 transition-all duration-300 transform hover:-translate-y-px hover:shadow-lg text-white border border-white/30 hover:bg-white/10">INICIO</a>
-                    <a href="#servicios" class="font-medium rounded-lg px-5 py-2 transition-all duration-300 transform hover:-translate-y-px hover:shadow-lg text-white border border-white/30 hover:bg-white/10">SERVICIOS</a>
-                    <a href="#nosotros" class="font-medium rounded-lg px-5 py-2 transition-all duration-300 transform hover:-translate-y-px hover:shadow-lg text-white border border-white/30 hover:bg-white/10">NOSOTROS</a>
-                    <a href="#contacto" class="font-medium rounded-lg px-5 py-2 transition-all duration-300 transform hover:-translate-y-px hover:shadow-lg text-white border border-white/30 hover:bg-white/10">CONTACTO</a>
+                    <a href="#inicio" class="font-medium rounded-lg px-5 py-2 transition-all duration-300 transform hover:-translate-y-px hover:shadow-lg text-white border border-white/30 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white">INICIO</a>
+                    <a href="#servicios" class="font-medium rounded-lg px-5 py-2 transition-all duration-300 transform hover:-translate-y-px hover:shadow-lg text-white border border-white/30 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white">SERVICIOS</a>
+                    <a href="#nosotros" class="font-medium rounded-lg px-5 py-2 transition-all duration-300 transform hover:-translate-y-px hover:shadow-lg text-white border border-white/30 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white">NOSOTROS</a>
+                    <a href="#contacto" class="font-medium rounded-lg px-5 py-2 transition-all duration-300 transform hover:-translate-y-px hover:shadow-lg text-white border border-white/30 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white">CONTACTO</a>
                 </div>
-                <a href="#contacto" class="hidden md:inline-block bg-cyan-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105">PIDE CITA</a>
-                <button id="mobile-menu-button" class="md:hidden text-white">
+                <a href="tel:988255461" class="hidden md:inline-block bg-cyan-500 text-white font-semibold px-6 py-2 rounded-full hover:bg-cyan-600 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400">LLAMAR</a>
+                <button id="mobile-menu-button" class="md:hidden text-white" aria-label="Abrir menú de navegación" aria-expanded="false">
                     <i data-lucide="menu" class="h-8 w-8"></i>
                 </button>
             </nav>
@@ -132,19 +168,19 @@
             <a href="#nosotros" class="block text-white text-center py-3 hover:bg-cyan-700">NOSOTROS</a>
             <a href="#contacto" class="block text-white text-center py-3 hover:bg-cyan-700">CONTACTO</a>
             <div class="p-4">
-                 <a href="#contacto" class="block w-full bg-cyan-500 text-white font-semibold px-6 py-3 rounded-full text-center hover:bg-cyan-600">PIDE CITA</a>
+                 <a href="tel:988255461" class="block w-full bg-cyan-500 text-white font-semibold px-6 py-3 rounded-full text-center hover:bg-cyan-600">LLAMAR</a>
             </div>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <!-- Sección Héroe -->
         <section id="inicio" class="relative h-screen flex items-center justify-center text-white text-center hero-bg">
             <div class="relative z-20 px-4">
                 <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight drop-shadow-lg">LA EXCELENCIA EN FISIOTERAPIA DESDE HACE MÁS DE 25 AÑOS</h1>
                 <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 font-light">Más de 15.000 pacientes han confiado en nosotros. Calidad, especialización y un trato personalizado para tu bienestar.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#servicios" class="bg-gray-100 text-cyan-700 font-semibold px-8 py-3 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-lg">DESCUBRE NUESTROS SERVICIOS</a>
+                    <a href="#servicios" class="bg-gray-100 text-cyan-700 font-semibold px-8 py-3 rounded-full hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-2 focus:ring-gray-300">DESCUBRE NUESTROS SERVICIOS</a>
                 </div>
             </div>
         </section>
@@ -159,28 +195,28 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="text-center p-6 transition-transform duration-300 hover:scale-105">
                         <div class="relative h-20 w-20 mx-auto mb-4">
-                            <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757591526/Generated_Image_September_11_2025_-_1_33PM_ndysiy.png" alt="Manos sosteniendo una columna vertebral digital que representa calidad y especialización" class="h-full w-full object-cover rounded-full shadow-md">
+                            <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757591526/Generated_Image_September_11_2025_-_1_33PM_ndysiy.png" alt="Calidad y especialización" class="h-full w-full object-cover rounded-full shadow-md" loading="lazy">
                         </div>
                         <h3 class="font-bold text-lg text-cyan-900 mb-2">Calidad y Especialización</h3>
                         <p class="text-gray-600 text-sm">Nuestro equipo está en formación continua para aplicar las técnicas más avanzadas y efectivas.</p>
                     </div>
                      <div class="text-center p-6 transition-transform duration-300 hover:scale-105">
                         <div class="relative h-20 w-20 mx-auto mb-4">
-                             <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757591649/Generated_Image_September_11_2025_-_1_53PM_o1ucn9.png" alt="Ilustración del enfoque personalizado en el paciente" class="h-full w-full object-cover rounded-full shadow-md">
+                             <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757591649/Generated_Image_September_11_2025_-_1_53PM_o1ucn9.png" alt="Enfoque personalizado" class="h-full w-full object-cover rounded-full shadow-md" loading="lazy">
                         </div>
                         <h3 class="font-bold text-lg text-cyan-900 mb-2">Enfoque en el Paciente</h3>
                         <p class="text-gray-600 text-sm">Cada tratamiento es 100% personalizado, diseñado específicamente para tus necesidades y objetivos.</p>
                     </div>
                      <div class="text-center p-6 transition-transform duration-300 hover:scale-105">
                         <div class="relative h-20 w-20 mx-auto mb-4">
-                             <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757591851/Generated_Image_September_11_2025_-_1_55PM_vwyidh.png" alt="Instalaciones modernas y equipamiento de Fisiourense" class="h-full w-full object-cover rounded-full shadow-md">
+                             <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757591851/Generated_Image_September_11_2025_-_1_55PM_vwyidh.png" alt="Instalaciones modernas" class="h-full w-full object-cover rounded-full shadow-md" loading="lazy">
                         </div>
                         <h3 class="font-bold text-lg text-cyan-900 mb-2">Instalaciones Modernas</h3>
                         <p class="text-gray-600 text-sm">Contamos con amplios espacios y equipamiento de última generación para tu recuperación.</p>
                     </div>
                      <div class="text-center p-6 transition-transform duration-300 hover:scale-105">
                         <div class="relative h-20 w-20 mx-auto mb-4">
-                            <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757605383/Generated_Image_September_11_2025_-_5_42PM_dgmfjr.png" alt="Comunicación clara y transparente entre fisioterapeuta y paciente" class="h-full w-full object-cover rounded-full shadow-md">
+                            <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757605383/Generated_Image_September_11_2025_-_5_42PM_dgmfjr.png" alt="Transparencia y comunicación" class="h-full w-full object-cover rounded-full shadow-md" loading="lazy">
                         </div>
                         <h3 class="font-bold text-lg text-cyan-900 mb-2">Transparencia</h3>
                         <p class="text-gray-600 text-sm">Te explicamos cada paso de tu tratamiento para que seas parte activa de tu mejoría.</p>
@@ -196,7 +232,7 @@
                 <p class="max-w-2xl mx-auto text-gray-600 mb-12">Pasa el ratón sobre cada servicio para descubrir más. Ofrecemos un enfoque 360° para cuidar de ti.</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Tarjeta Fisioterapia -->
-                    <a href="fisioterapia.html" class="block">
+                    <a href="fisioterapia.html" class="block focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-2xl">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757605716/Generated_Image_September_11_2025_-_5_48PM_epvvyu.png'); background-size: cover; background-position: center;">
@@ -212,7 +248,7 @@
                         </div>
                     </a>
                     <!-- Tarjeta Fisioterapia Deportiva -->
-                    <a href="fisioterapia-deportiva.html" class="block">
+                    <a href="fisioterapia-deportiva.html" class="block focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-2xl">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757606662/Generated_Image_September_11_2025_-_5_53PM_1_tyodfn.png'); background-size: cover; background-position: center;">
@@ -228,7 +264,7 @@
                         </div>
                     </a>
                     <!-- Tarjeta Osteopatía -->
-                    <a href="osteopatia.html" class="block">
+                    <a href="osteopatia.html" class="block focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-2xl">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                  <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757607031/Generated_Image_September_11_2025_-_5_56PM_rvdmam.png'); background-size: cover; background-position: center;">
@@ -244,7 +280,7 @@
                         </div>
                     </a>
                     <!-- Tarjeta Nutrición -->
-                    <a href="nutricion.html" class="block">
+                    <a href="nutricion.html" class="block focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-2xl">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757607145/Generated_Image_September_11_2025_-_6_11PM_dmpnuo.png'); background-size: cover; background-position: center;">
@@ -260,7 +296,7 @@
                         </div>
                     </a>
                     <!-- Tarjeta Entrenador Personal -->
-                    <a href="entrenador-personal.html" class="block">
+                    <a href="entrenador-personal.html" class="block focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-2xl">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757607295/Generated_Image_September_11_2025_-_6_14PM_iharib.png'); background-size: cover; background-position: center;">
@@ -276,7 +312,7 @@
                         </div>
                     </a>
                      <!-- Tarjeta Fisiourense Estética -->
-                    <a href="estetica.html" class="block">
+                    <a href="estetica.html" class="block focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-2xl">
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front" style="background-image: url('https://res.cloudinary.com/djyfupa7x/image/upload/v1757627719/pau-0235_loemf2.jpg'); background-size: cover; background-position: center;">
@@ -311,20 +347,19 @@
                      <div class="lg:w-1/2 w-full">
                         <div class="relative shadow-2xl rounded-2xl overflow-hidden">
                              <div id="gallery-slider" class="flex transition-transform duration-500 ease-in-out">
-                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593540/Generated_Image_September_11_2025_-_2_25PM_wl26k8.png" alt="Fisioterapeuta aplicando terapia manual en la espalda de un paciente" class="w-full object-cover aspect-video flex-shrink-0">
-                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593540/Generated_Image_September_11_2025_-_2_24PM_zulw6t.png" alt="Interior de la clínica Fisiourense con camillas y equipamiento" class="w-full object-cover aspect-video flex-shrink-0">
-                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593541/Generated_Image_September_11_2025_-_2_24PM_2_elz2wu.png" alt="Especialista realizando un tratamiento de fisioterapia en una pierna" class="w-full object-cover aspect-video flex-shrink-0">
-                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593541/Generated_Image_September_11_2025_-_2_24PM_1_wc56jf.png" alt="Sala de rehabilitación con material deportivo y de entrenamiento" class="w-full object-cover aspect-video flex-shrink-0">
-                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593542/Generated_Image_September_11_2025_-_2_24PM_3_qdegfj.png" alt="Fisioterapeuta trabajando con un paciente en la recuperación de la movilidad del brazo" class="w-full object-cover aspect-video flex-shrink-0">
+                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593540/Generated_Image_September_11_2025_-_2_25PM_wl26k8.png" alt="Fisioterapeuta aplicando terapia manual" class="w-full object-cover aspect-video flex-shrink-0" loading="lazy">
+                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593540/Generated_Image_September_11_2025_-_2_24PM_zulw6t.png" alt="Interior de la clínica Fisiourense" class="w-full object-cover aspect-video flex-shrink-0" loading="lazy">
+                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593541/Generated_Image_September_11_2025_-_2_24PM_2_elz2wu.png" alt="Tratamiento de fisioterapia en pierna" class="w-full object-cover aspect-video flex-shrink-0" loading="lazy">
+                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593541/Generated_Image_September_11_2025_-_2_24PM_1_wc56jf.png" alt="Sala de rehabilitación con material deportivo" class="w-full object-cover aspect-video flex-shrink-0" loading="lazy">
+                                <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757593542/Generated_Image_September_11_2025_-_2_24PM_3_qdegfj.png" alt="Fisioterapeuta trabajando con paciente" class="w-full object-cover aspect-video flex-shrink-0" loading="lazy">
                             </div>
-                            <button id="prev-gallery" class="absolute top-1/2 -translate-y-1/2 left-2 bg-white/70 p-2 rounded-full hover:bg-white"><i data-lucide="chevron-left"></i></button>
-                            <button id="next-gallery" class="absolute top-1/2 -translate-y-1/2 right-2 bg-white/70 p-2 rounded-full hover:bg-white"><i data-lucide="chevron-right"></i></button>
+                            <button id="prev-gallery" class="absolute top-1/2 -translate-y-1/2 left-2 bg-white/70 p-2 rounded-full hover:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500" aria-label="Imagen anterior"><i data-lucide="chevron-left"></i></button>
+                            <button id="next-gallery" class="absolute top-1/2 -translate-y-1/2 right-2 bg-white/70 p-2 rounded-full hover:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-500" aria-label="Imagen siguiente"><i data-lucide="chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <!-- Sección de Testimonios -->
         <section id="testimonios" class="py-20 bg-gray-50 scroll-animate">
@@ -333,11 +368,16 @@
                 <div class="relative">
                     <div class="overflow-hidden">
                         <div id="testimonial-slider" class="flex transition-transform duration-500 ease-in-out">
-                            <!-- Testimonios... -->
+                            <!-- Testimonios con etiquetas de dolencia -->
                             <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"Un trato inmejorable y muy profesional. Llegué con un dolor de espalda terrible y salí como nuevo. ¡Totalmente recomendable!"</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Dolor de espalda</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"Un trato inmejorable y muy profesional. Llegué con un dolor de espalda terrible y salí como nuevo. ¡Totalmente recomendable!"</p>
+                                        </div>
                                         <div>
                                             <h4 class="font-bold text-cyan-900">Carlos Pérez</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -348,7 +388,12 @@
                              <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"Después de mi lesión de rodilla, pensaba que no volvería a correr. Gracias al equipo de Fisiourense, he vuelto a competir sin dolor."</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Lesión de rodilla</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"Después de mi lesión de rodilla, pensaba que no volvería a correr. Gracias al equipo de Fisiourense, he vuelto a competir sin dolor."</p>
+                                        </div>
                                          <div>
                                             <h4 class="font-bold text-cyan-900">Laura Gómez</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -359,7 +404,12 @@
                              <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"El tratamiento de osteopatía me ha cambiado la vida. Adiós a las migrañas y a la tensión cervical. Unos profesionales excelentes."</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Migrañas y tensión cervical</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"El tratamiento de osteopatía me ha cambiado la vida. Adiós a las migrañas y a la tensión cervical. Unos profesionales excelentes."</p>
+                                        </div>
                                         <div>
                                             <h4 class="font-bold text-cyan-900">Ana Fernández</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -370,7 +420,12 @@
                              <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"El servicio de nutrición es el complemento perfecto. He aprendido a comer mejor y mi recuperación física ha sido mucho más rápida."</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Nutrición deportiva</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"El servicio de nutrición es el complemento perfecto. He aprendido a comer mejor y mi recuperación física ha sido mucho más rápida."</p>
+                                        </div>
                                         <div>
                                             <h4 class="font-bold text-cyan-900">David López</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -381,7 +436,12 @@
                              <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"Como deportista, la fisioterapia deportiva aquí es de otro nivel. Entienden perfectamente las exigencias y cómo acelerar la vuelta."</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Fisioterapia deportiva</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"Como deportista, la fisioterapia deportiva aquí es de otro nivel. Entienden perfectamente las exigencias y cómo acelerar la vuelta."</p>
+                                        </div>
                                          <div>
                                             <h4 class="font-bold text-cyan-900">Sofía Castro</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -392,7 +452,12 @@
                              <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"Acudí por el servicio de entrenador personal para readaptar mi hombro y el resultado ha sido espectacular. ¡Gracias por la paciencia!"</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Readaptación de hombro</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"Acudí por el servicio de entrenador personal para readaptar mi hombro y el resultado ha sido espectacular. ¡Gracias por la paciencia!"</p>
+                                        </div>
                                         <div>
                                             <h4 class="font-bold text-cyan-900">Javier Torres</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -403,7 +468,12 @@
                              <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"Los tratamientos de Fisiourense Estética son fantásticos. Profesionalidad y tecnología de vanguardia con resultados visibles."</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Tratamiento estético</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"Los tratamientos de Fisiourense Estética son fantásticos. Profesionalidad y tecnología de vanguardia con resultados visibles."</p>
+                                        </div>
                                         <div>
                                             <h4 class="font-bold text-cyan-900">Elena Vázquez</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -414,7 +484,12 @@
                              <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"No solo tratan lesiones, también te enseñan a prevenirlas. Un enfoque integral que valoro muchísimo. Grandes profesionales."</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Prevención de lesiones</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"No solo tratan lesiones, también te enseñan a prevenirlas. Un enfoque integral que valoro muchísimo. Grandes profesionales."</p>
+                                        </div>
                                         <div>
                                             <h4 class="font-bold text-cyan-900">Marcos Rey</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -425,7 +500,12 @@
                              <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"Fui por un problema de vértigos y el cambio ha sido radical. El enfoque craneal de la osteopatía me ha funcionado de maravilla."</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Vértigos</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"Fui por un problema de vértigos y el cambio ha sido radical. El enfoque craneal de la osteopatía me ha funcionado de maravilla."</p>
+                                        </div>
                                         <div>
                                             <h4 class="font-bold text-cyan-900">Isabel M.</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -436,7 +516,12 @@
                              <div class="carousel-item">
                                 <div class="p-4 h-full">
                                     <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg h-full flex flex-col justify-between">
-                                        <p class="text-gray-600 mb-6 italic">"Un equipo increíblemente preparado. Me ayudaron a preparar una maratón con su servicio de nutrición y entrenamiento. ¡Imprescindibles!"</p>
+                                        <div>
+                                            <div class="mb-3">
+                                                <span class="bg-cyan-100 text-cyan-800 text-xs font-semibold px-3 py-1 rounded-full">Preparación maratón</span>
+                                            </div>
+                                            <p class="text-gray-600 mb-6 italic">"Un equipo increíblemente preparado. Me ayudaron a preparar una maratón con su servicio de nutrición y entrenamiento. ¡Imprescindibles!"</p>
+                                        </div>
                                         <div>
                                             <h4 class="font-bold text-cyan-900">Rubén Soto</h4>
                                             <div class="flex text-yellow-500 mt-2"><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i><i data-lucide="star" class="h-5 w-5 fill-current"></i></div>
@@ -446,8 +531,55 @@
                             </div>
                         </div>
                     </div>
-                    <button id="prev-testimonial" class="absolute top-1/2 -translate-y-1/2 left-1 bg-white/70 p-2 rounded-full shadow-md hover:bg-white transition-colors z-10"><i data-lucide="chevron-left" class="pointer-events-none"></i></button>
-                    <button id="next-testimonial" class="absolute top-1/2 -translate-y-1/2 right-1 bg-white/70 p-2 rounded-full shadow-md hover:bg-white transition-colors z-10"><i data-lucide="chevron-right" class="pointer-events-none"></i></button>
+                    <button id="prev-testimonial" class="absolute top-1/2 -translate-y-1/2 left-1 bg-white/70 p-2 rounded-full shadow-md hover:bg-white transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-cyan-500" aria-label="Testimonio anterior"><i data-lucide="chevron-left" class="pointer-events-none"></i></button>
+                    <button id="next-testimonial" class="absolute top-1/2 -translate-y-1/2 right-1 bg-white/70 p-2 rounded-full shadow-md hover:bg-white transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-cyan-500" aria-label="Testimonio siguiente"><i data-lucide="chevron-right" class="pointer-events-none"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección FAQ -->
+        <section id="faq" class="py-20 bg-white scroll-animate">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-cyan-800 mb-4">Preguntas Frecuentes</h2>
+                    <p class="text-gray-600">Resolvemos tus dudas más comunes</p>
+                </div>
+                <div class="space-y-4">
+                    <details class="bg-gray-50 rounded-lg p-6 group">
+                        <summary class="font-bold text-cyan-900 cursor-pointer list-none flex justify-between items-center">
+                            ¿Necesito cita previa?
+                            <i data-lucide="chevron-down" class="h-5 w-5 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">Sí, trabajamos con cita previa para garantizar una atención personalizada y sin esperas. Puedes llamarnos al 988 255 461 para reservar tu cita.</p>
+                    </details>
+                    <details class="bg-gray-50 rounded-lg p-6 group">
+                        <summary class="font-bold text-cyan-900 cursor-pointer list-none flex justify-between items-center">
+                            ¿Trabajáis con seguros médicos?
+                            <i data-lucide="chevron-down" class="h-5 w-5 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">Sí, trabajamos con las principales compañías de seguros. Contáctanos para confirmar si tu seguro está incluido.</p>
+                    </details>
+                    <details class="bg-gray-50 rounded-lg p-6 group">
+                        <summary class="font-bold text-cyan-900 cursor-pointer list-none flex justify-between items-center">
+                            ¿Cuánto dura una sesión?
+                            <i data-lucide="chevron-down" class="h-5 w-5 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">Cada sesión tiene una duración aproximada de 45-60 minutos, dependiendo del tratamiento y las necesidades de cada paciente.</p>
+                    </details>
+                    <details class="bg-gray-50 rounded-lg p-6 group">
+                        <summary class="font-bold text-cyan-900 cursor-pointer list-none flex justify-between items-center">
+                            ¿Cuántas sesiones necesitaré?
+                            <i data-lucide="chevron-down" class="h-5 w-5 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">Depende de cada caso. En la primera consulta realizamos una valoración completa y te daremos un plan de tratamiento personalizado con una estimación de sesiones.</p>
+                    </details>
+                    <details class="bg-gray-50 rounded-lg p-6 group">
+                        <summary class="font-bold text-cyan-900 cursor-pointer list-none flex justify-between items-center">
+                            ¿Tenéis parking?
+                            <i data-lucide="chevron-down" class="h-5 w-5 transition-transform group-open:rotate-180"></i>
+                        </summary>
+                        <p class="text-gray-600 mt-4">En la zona hay aparcamiento público disponible. La clínica está muy bien ubicada con fácil acceso.</p>
+                    </details>
                 </div>
             </div>
         </section>
@@ -462,45 +594,45 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <!-- Mapa -->
                     <div class="w-full h-96 lg:h-full rounded-2xl overflow-hidden shadow-2xl">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2959.136618491325!2d-7.86872968455113!3d42.34001997918816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2ffeb5947a7e8b%3A0xe2a38a2e1c073a46!2sAv.%20de%20Portugal%2C%2032%2C%2032002%20Ourense!5e0!3m2!1ses!2ses!4v1678886543210!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2959.136618491325!2d-7.86872968455113!3d42.34001997918816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2ffeb5947a7e8b%3A0xe2a38a2e1c073a46!2sAv.%20de%20Portugal%2C%2032%2C%2032002%20Ourense!5e0!3m2!1ses!2ses!4v1678886543210!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de Fisiourense en Google Maps"></iframe>
                     </div>
                     <!-- Información de contacto -->
                     <div class="space-y-8">
                         <div class="flex items-start gap-4">
-                            <div class="bg-cyan-600 p-4 rounded-full"><i data-lucide="map-pin" class="h-7 w-7"></i></div>
+                            <div class="bg-cyan-600 p-4 rounded-full" aria-hidden="true"><i data-lucide="map-pin" class="h-7 w-7"></i></div>
                             <div>
                                 <h3 class="font-bold text-xl">Dirección</h3>
                                 <p class="opacity-80 text-lg">Avda. Portugal 32, 32002 Ourense</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="bg-cyan-600 p-4 rounded-full"><i data-lucide="phone" class="h-7 w-7"></i></div>
+                            <div class="bg-cyan-600 p-4 rounded-full" aria-hidden="true"><i data-lucide="phone" class="h-7 w-7"></i></div>
                             <div>
                                 <h3 class="font-bold text-xl">Teléfono</h3>
-                                <p class="opacity-80 text-lg">988 255 461</p>
+                                <a href="tel:988255461" class="opacity-80 text-lg hover:text-cyan-200 transition-colors">988 255 461</a>
                             </div>
                         </div>
                          <div class="flex items-start gap-4">
-                            <div class="bg-cyan-600 p-4 rounded-full"><i data-lucide="clock" class="h-7 w-7"></i></div>
+                            <div class="bg-cyan-600 p-4 rounded-full" aria-hidden="true"><i data-lucide="clock" class="h-7 w-7"></i></div>
                             <div>
                                 <h3 class="font-bold text-xl">Horario</h3>
                                 <p class="opacity-80 text-lg">Lunes a Jueves: 9:00 - 21:00<br>Viernes: 8:00 - 21:00</p>
                             </div>
                         </div>
 
-                        <!-- ✨ GEMINI FEATURE: Symptom Analyzer -->
+                        <!-- Analizador de Síntomas -->
                         <div class="bg-cyan-600 p-6 rounded-2xl shadow-inner">
                             <div class="flex items-center gap-3 mb-3">
-                                <i data-lucide="sparkles" class="h-7 w-7 text-yellow-300"></i>
+                                <i data-lucide="sparkles" class="h-7 w-7 text-yellow-300" aria-hidden="true"></i>
                                 <h3 class="font-bold text-xl">¿No sabes qué tratamiento necesitas?</h3>
                             </div>
                             <p class="opacity-80 text-sm mb-4">Describe brevemente tu dolencia o molestia y nuestra IA te orientará sobre qué servicio podría ser el más adecuado para ti.</p>
+                            <label for="symptom-input" class="sr-only">Describe tus síntomas</label>
                             <textarea id="symptom-input" class="w-full h-24 p-3 rounded-lg text-gray-800 text-sm focus:ring-2 focus:ring-cyan-400 focus:outline-none" placeholder="Ej: Tengo un dolor agudo en el hombro derecho al levantar el brazo..."></textarea>
-                            <button id="analyze-btn" class="mt-4 w-full bg-yellow-300 text-cyan-800 font-bold px-6 py-3 rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105">Analizar mis síntomas</button>
-                            <div id="gemini-result" class="mt-4 p-4 bg-cyan-800 rounded-lg text-sm hidden">
-                                <!-- Loading spinner -->
+                            <button id="analyze-btn" class="mt-4 w-full bg-yellow-300 text-cyan-800 font-bold px-6 py-3 rounded-full hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-500">Analizar mis síntomas</button>
+                            <div id="gemini-result" class="mt-4 p-4 bg-cyan-800 rounded-lg text-sm hidden" role="alert" aria-live="polite">
                                 <div id="loading-spinner" class="flex justify-center items-center">
-                                    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
                                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                     </svg>
@@ -510,21 +642,90 @@
                             </div>
                         </div>
                         
-                        <a href="#contacto" class="inline-block w-full text-center bg-white text-cyan-700 font-bold px-8 py-4 rounded-full hover:bg-cyan-100 transition-all duration-300 transform hover:scale-105 text-lg">SOLICITAR CITA</a>
+                        <a href="tel:988255461" class="inline-block w-full text-center bg-white text-cyan-700 font-bold px-8 py-4 rounded-full hover:bg-cyan-100 transition-all duration-300 transform hover:scale-105 text-lg focus:outline-none focus:ring-2 focus:ring-white">LLAMAR AHORA</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
     
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/34988255461" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i data-lucide="message-circle" class="h-8 w-8"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-40 right-10 bg-cyan-600 text-white p-3 rounded-full shadow-lg hover:bg-cyan-700 transition-all duration-300 opacity-0 pointer-events-none focus:outline-none focus:ring-2 focus:ring-cyan-400 z-50" aria-label="Volver arriba">
+        <i data-lucide="arrow-up" class="h-6 w-6"></i>
+    </button>
+    
     <!-- Footer -->
-    <footer class="bg-cyan-900 text-white">
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="container mx-auto px-4 py-12 max-w-screen-xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757592863/Generated_Image_September_11__2025_-_2_11PM-removebg-preview_tkqvyp.png" alt="Fisiourense" class="h-12 mb-4" style="filter: brightness(0) invert(1);" loading="lazy">
+                    <p class="text-sm mb-4">Clínica de fisioterapia avanzada en Ourense con más de 25 años de experiencia cuidando tu salud</p>
+                    <div class="flex gap-3">
+                        <a href="#" class="bg-gray-800 p-2 rounded-lg hover:bg-cyan-600 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400" aria-label="Instagram">
+                            <i data-lucide="instagram" class="h-5 w-5"></i>
+                        </a>
+                        <a href="#" class="bg-gray-800 p-2 rounded-lg hover:bg-cyan-600 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400" aria-label="Facebook">
+                            <i data-lucide="facebook" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="fisioterapia.html" class="hover:text-cyan-400 transition-colors">Fisioterapia</a></li>
+                        <li><a href="fisioterapia-deportiva.html" class="hover:text-cyan-400 transition-colors">Fisioterapia Deportiva</a></li>
+                        <li><a href="osteopatia.html" class="hover:text-cyan-400 transition-colors">Osteopatía</a></li>
+                        <li><a href="nutricion.html" class="hover:text-cyan-400 transition-colors">Nutrición</a></li>
+                        <li><a href="entrenador-personal.html" class="hover:text-cyan-400 transition-colors">Entrenador Personal</a></li>
+                        <li><a href="estetica.html" class="hover:text-cyan-400 transition-colors">Estética</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Enlaces</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio" class="hover:text-cyan-400 transition-colors">Inicio</a></li>
+                        <li><a href="#servicios" class="hover:text-cyan-400 transition-colors">Servicios</a></li>
+                        <li><a href="#nosotros" class="hover:text-cyan-400 transition-colors">Nosotros</a></li>
+                        <li><a href="#testimonios" class="hover:text-cyan-400 transition-colors">Opiniones</a></li>
+                        <li><a href="#contacto" class="hover:text-cyan-400 transition-colors">Contacto</a></li>
+                        <li><a href="#faq" class="hover:text-cyan-400 transition-colors">Preguntas Frecuentes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white mb-4">Contacto</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="h-5 w-5 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                            <span>Avda. Portugal 32<br>32002 Ourense</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="h-5 w-5 flex-shrink-0" aria-hidden="true"></i>
+                            <a href="tel:988255461" class="hover:text-cyan-400 transition-colors">988 255 461</a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="clock" class="h-5 w-5 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
+                            <span>Lun-Jue: 9-21h<br>Vie: 8-21h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-sm">
+                <p>&copy; 2024 Fisiourense. Todos los derechos reservados. | <a href="#" id="privacy-link" class="hover:text-cyan-400 transition-colors">Política de Privacidad</a> | Registro Sanitario Oficial</p>
+            </div>
+        </div>
+
         <!-- Modal de Política de Privacidad -->
-        <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-60 z-[100] hidden items-center justify-center p-4" style="display: none;">
+        <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-60 z-[100] hidden items-center justify-center p-4" style="display: none;" role="dialog" aria-labelledby="privacy-title" aria-modal="true">
             <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
                 <div class="p-5 border-b flex justify-between items-center sticky top-0 bg-white">
-                    <h3 class="text-xl font-bold text-cyan-800">Política de Privacidad y Protección de Datos</h3>
-                    <button id="close-modal-btn" class="text-gray-500 hover:text-gray-800">
+                    <h3 id="privacy-title" class="text-xl font-bold text-cyan-800">Política de Privacidad y Protección de Datos</h3>
+                    <button id="close-modal-btn" class="text-gray-500 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded" aria-label="Cerrar modal">
                         <i data-lucide="x" class="h-6 w-6"></i>
                     </button>
                 </div>
@@ -555,37 +756,16 @@
                 </div>
             </div>
         </div>
-
-        <div class="container mx-auto px-4 py-8">
-            <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
-                <a href="#">
-                    <img src="https://res.cloudinary.com/djyfupa7x/image/upload/v1757592863/Generated_Image_September_11__2025_-_2_11PM-removebg-preview_tkqvyp.png" alt="Logotipo de Fisiourense" class="h-14 w-auto" style="filter: brightness(0) invert(1);">
-                </a>
-                 <div class="flex items-center space-x-6 text-cyan-200">
-                    <a href="#inicio" class="hover:text-white transition-colors">Inicio</a>
-                    <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
-                    <a href="#nosotros" class="hover:text-white transition-colors">Nosotros</a>
-                </div>
-                 <div class="flex justify-center space-x-4">
-                    <a href="#" class="text-cyan-200 hover:text-white"><i data-lucide="instagram" class="h-6 w-6"></i></a>
-                    <a href="#" class="text-cyan-200 hover:text-white"><i data-lucide="facebook" class="h-6 w-6"></i></a>
-                </div>
-            </div>
-             <div class="border-t border-cyan-800 mt-8 pt-6 text-center text-sm text-cyan-300">
-                <p>&copy; 2024 Fisiourense. Todos los derechos reservados.</p>
-                <a href="#" id="privacy-link" class="underline hover:text-white mt-2 inline-block">Política de Privacidad</a>
-            </div>
-        </div>
     </footer>
     
     <!-- Banner de Cookies -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 bg-opacity-90 text-white p-4 text-sm z-[150] translate-y-full transition-transform duration-500 ease-in-out" style="display: none;">
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-800 bg-opacity-90 text-white p-4 text-sm z-[150] translate-y-full transition-transform duration-500 ease-in-out" style="display: none;" role="alert" aria-live="polite">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-center md:text-left">
                 Utilizamos cookies propias y de terceros para mejorar tu experiencia en nuestra web. Al continuar navegando, aceptas su uso. Puedes obtener más información en nuestra 
-                <a href="#" id="privacy-link-cookie" class="underline hover:text-cyan-300">Política de Privacidad</a>.
+                <a href="#" id="privacy-link-cookie" class="underline hover:text-cyan-300 focus:outline-none focus:ring-2 focus:ring-cyan-400">Política de Privacidad</a>.
             </p>
-            <button id="accept-cookies-btn" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 flex-shrink-0">
+            <button id="accept-cookies-btn" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-300 flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-cyan-400">
                 Aceptar
             </button>
         </div>
@@ -604,7 +784,7 @@
         const handleScroll = () => {
             if (window.scrollY > 50) {
                 header.classList.add('bg-white', 'shadow-lg');
-                logoImg.style.filter = 'none'; // Quitar filtro para ver logo original
+                logoImg.style.filter = 'none';
                 
                 navButtons.forEach(button => {
                     button.classList.remove('text-white', 'border-white/30', 'hover:bg-white/10');
@@ -616,7 +796,7 @@
 
             } else {
                 header.classList.remove('bg-white', 'shadow-lg');
-                logoImg.style.filter = 'brightness(0) invert(1)'; // Poner logo blanco
+                logoImg.style.filter = 'brightness(0) invert(1)';
                 
                 navButtons.forEach(button => {
                     button.classList.add('text-white', 'border-white/30', 'hover:bg-white/10');
@@ -630,12 +810,35 @@
         window.addEventListener('scroll', handleScroll);
         document.addEventListener('DOMContentLoaded', handleScroll);
 
+        // --- Scroll to top button ---
+        const scrollTopBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.add('opacity-100');
+            } else {
+                scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                scrollTopBtn.classList.remove('opacity-100');
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
         // --- Lógica para el menú móvil ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', !isHidden);
+        });
+
+        // Cerrar menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
         });
 
         // --- Lógica para Carruseles ---
@@ -730,19 +933,29 @@
         const openModal = (e) => {
             e.preventDefault();
             privacyModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
             lucide.createIcons();
         };
 
         const closeModal = () => {
             privacyModal.style.display = 'none';
+            document.body.style.overflow = '';
         };
 
         if (privacyLink) privacyLink.addEventListener('click', openModal);
         if (privacyLinkCookie) privacyLinkCookie.addEventListener('click', openModal);
         if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-        if (privacyModal) privacyModal.addEventListener('click', (e) => {
-            if (e.target === privacyModal) closeModal();
-        });
+        if (privacyModal) {
+            privacyModal.addEventListener('click', (e) => {
+                if (e.target === privacyModal) closeModal();
+            });
+            // Cerrar con tecla Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && privacyModal.style.display === 'flex') {
+                    closeModal();
+                }
+            });
+        }
         
         // --- Lógica para el Banner de Cookies ---
         const cookieBanner = document.getElementById('cookie-banner');
@@ -755,7 +968,7 @@
                 date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
                 expires = "; expires=" + date.toUTCString();
             }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
         };
 
         const getCookie = (name) => {
@@ -784,7 +997,7 @@
             }, 500);
         });
         
-        // --- Lógica para el Analizador de Síntomas con Gemini API (Seguro) ---
+        // --- Lógica para el Analizador de Síntomas con Gemini API ---
         const analyzeBtn = document.getElementById('analyze-btn');
         const symptomInput = document.getElementById('symptom-input');
         const geminiResultDiv = document.getElementById('gemini-result');
@@ -852,9 +1065,40 @@
             animatedElements.forEach(element => {
                 observer.observe(element);
             });
+
+            // Inicializar iconos de Lucide para elementos dinámicos
+            lucide.createIcons();
+        });
+
+        // Smooth scroll para enlaces ancla
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const headerHeight = header.offsetHeight;
+                        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
         });
 
     </script>
+
+    <!-- Google Analytics (reemplaza con tu ID) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=TU-ID-AQUI"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'TU-ID-AQUI');
+    </script> -->
+
 </body>
 </html>
-
