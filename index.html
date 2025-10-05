@@ -996,57 +996,92 @@
                 cookieBanner.style.display = 'none';
             }, 500);
         });
+        // --- Lógica para el Analizador de Síntomas con límite de consultas ---
+const analyzeBtn = document.getElementById('analyze-btn');
+const symptomInput = document.getElementById('symptom-input');
+const geminiResultDiv = document.getElementById('gemini-result');
+const resultText = document.getElementById('result-text');
+const loadingSpinner = document.getElementById('loading-spinner');
+
+if (analyzeBtn) {
+    analyzeBtn.addEventListener('click', async () => {
+        const userInput = symptomInput.value;
         
-        // --- Lógica para el Analizador de Síntomas con Gemini API ---
-        const analyzeBtn = document.getElementById('analyze-btn');
-        const symptomInput = document.getElementById('symptom-input');
-        const geminiResultDiv = document.getElementById('gemini-result');
-        const resultText = document.getElementById('result-text');
-        const loadingSpinner = document.getElementById('loading-spinner');
-
-        if (analyzeBtn) {
-            analyzeBtn.addEventListener('click', async () => {
-                const userInput = symptomInput.value;
-                if (!userInput.trim()) {
-                    resultText.innerHTML = "Por favor, describe tu dolencia en el cuadro de texto.";
-                    geminiResultDiv.classList.remove('hidden');
-                    loadingSpinner.style.display = 'none';
-                    resultText.style.display = 'block';
-                    return;
-                }
-
-                geminiResultDiv.classList.remove('hidden');
-                loadingSpinner.style.display = 'flex';
-                resultText.style.display = 'none';
-                resultText.innerHTML = '';
-                
-                try {
-                    const response = await fetch('/api/analyze', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ userInput: userInput }),
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`El servidor respondió con un error: ${response.statusText}`);
-                    }
-                    
-                    const result = await response.json();
-                    
-                    let generatedText = result.text;
-                    generatedText = generatedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                    generatedText = generatedText.replace(/\n/g, '<br>');
-                    resultText.innerHTML = generatedText;
-
-                } catch (error) {
-                    console.error("Error al llamar a la función de API:", error);
-                    resultText.innerHTML = "Lo sentimos, ha ocurrido un error al procesar tu solicitud. Por favor, intenta de nuevo más tarde o llámanos directamente.";
-                } finally {
-                    loadingSpinner.style.display = 'none';
-                    resultText.style.display = 'block';
-                }
-            });
+        if (!userInput.trim()) {
+            resultText.innerHTML = "Por favor, describe tu dolencia en el cuadro de texto.";
+            geminiResultDiv.classList.remove('hidden');
+            loadingSpinner.style.display = 'none';
+            resultText.style.display = 'block';
+            return;
         }
+
+        // Verificar límite de consultas
+        let queryCount = parseInt(localStorage.getItem('symptom_queries') || '0');
+        const maxQueries = 3;
+        const lastReset = localStorage.getItem('symptom_reset_date');
+        const today = new Date().toDateString();
+
+        // Resetear contador cada día
+        if (lastReset !== today) {
+            localStorage.setItem('symptom_queries', '0');
+            localStorage.setItem('symptom_reset_date', today);
+            queryCount = 0;
+        }
+
+        // Verificar si ha alcanzado el límite
+        if (queryCount >= maxQueries) {
+            resultText.innerHTML = "<strong>Has alcanzado el límite de " + maxQueries + " consultas diarias.</strong><br><br>Para una atención personalizada y sin límites, llámanos al <a href='tel:988255461' class='underline font-bold hover:text-white'>988 255 461</a> o envíanos un <a href='https://wa.me/34988255461' class='underline font-bold hover:text-white' target='_blank'>WhatsApp</a>.";
+            geminiResultDiv.classList.remove('hidden');
+            loadingSpinner.style.display = 'none';
+            resultText.style.display = 'block';
+            return;
+        }
+
+        geminiResultDiv.classList.remove('hidden');
+        loadingSpinner.style.display = 'flex';
+        resultText.style.display = 'none';
+        resultText.innerHTML = '';
+        
+        try {
+            const response = await fetch('/api/analyze', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userInput: userInput }),
+            });
+
+            if (!response.ok) {
+                throw new Error(`El servidor respondió con un error: ${response.statusText}`);
+            }
+            
+            const result = await response.json();
+            
+            let generatedText = result.text;
+            generatedText = generatedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            generatedText = generatedText.replace(/\n/g, '<br>');
+            resultText.innerHTML = generatedText;
+
+            // Incrementar contador SOLO si la petición fue exitosa
+            const newCount = queryCount + 1;
+            localStorage.setItem('symptom_queries', newCount.toString());
+            localStorage.setItem('symptom_reset_date', today);
+            
+            // Mostrar consultas restantes
+            const remaining = maxQueries - newCount;
+            if (remaining > 0) {
+                resultText.innerHTML += `<br><br><small class="text-cyan-200 opacity-80">💡 Te quedan <strong>${remaining}</strong> consulta${remaining !== 1 ? 's' : ''} hoy.</small>`;
+            } else {
+                resultText.innerHTML += `<br><br><small class="text-cyan-200 opacity-80">Has usado todas tus consultas diarias. Mañana podrás consultar de nuevo.</small>`;
+            }
+
+        } catch (error) {
+            console.error("Error al llamar a la función de API:", error);
+            resultText.innerHTML = "Lo sentimos, ha ocurrido un error al procesar tu solicitud. Por favor, intenta de nuevo más tarde o llámanos directamente al <a href='tel:988255461' class='underline font-bold hover:text-white'>988 255 461</a>.";
+        } finally {
+            loadingSpinner.style.display = 'none';
+            resultText.style.display = 'block';
+        }
+    });
+}
         
         // --- Lógica para animaciones de scroll ---
         document.addEventListener('DOMContentLoaded', () => {
@@ -1101,4 +1136,5 @@
     </script> -->
 
 </body>
+
 </html>
